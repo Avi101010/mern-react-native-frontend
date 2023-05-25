@@ -1,4 +1,4 @@
-import { TouchableOpacity } from 'react-native'
+import { TouchableOpacity, Platform } from 'react-native'
 import React from 'react'
 import { Avatar } from 'react-native-paper'
 import { colors } from '../styles/Styles'
@@ -20,8 +20,8 @@ const Header = ({ back , emptyCart=false }) => {
                 <TouchableOpacity
                     style={{
                         position: "absolute",
-                        left: 20,
-                        top: 40,
+                        left: -20,
+                        top: Platform.OS === "android" ? 0 : 40,
                         zIndex: 10
                     }}
                     onPress={() => navigate.goBack()}
@@ -38,7 +38,7 @@ const Header = ({ back , emptyCart=false }) => {
                 style={{
                     position: "absolute",
                     right: -20,
-                    top: 40,
+                    top: Platform.OS === "android" ? 0 : 40,
                     zIndex: 10,
                 }}
                 onPress={ emptyCart ? emptyCartHandler : () => navigate.navigate("cart")}

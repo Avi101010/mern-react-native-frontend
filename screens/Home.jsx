@@ -25,7 +25,7 @@ const Home = () => {
   return (
     <View style={defaultStyle}>
       <SafeAreaView >
-        <Header />
+        <Header back={true}/>
         <View style={{
           paddingTop: 70,
           flexDirection: "row",
@@ -58,7 +58,7 @@ const Home = () => {
          <ScrollView
           horizontal 
           contentContainerStyle={{
-            alignItems: ""
+            alignItems: "center"
           }}
           showsHorizontalScrollIndicator={false}
           >
